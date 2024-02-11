@@ -55,13 +55,13 @@ function MyApp(props: any) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <ReduxProvider store={store}>
-        <AuthProvider>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <CollapseDrawerProvider>
-              <SettingsProvider defaultSettings={settings}>
-                <ThemeProvider>
-                  <NotistackProvider>
+      <NotistackProvider>
+        <ReduxProvider store={store}>
+          <AuthProvider>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <CollapseDrawerProvider>
+                <SettingsProvider defaultSettings={settings}>
+                  <ThemeProvider>
                     <ThemeColorPresets>
                       <ThemeLocalization>
                         <RtlLayout>
@@ -70,13 +70,13 @@ function MyApp(props: any) {
                         </RtlLayout>
                       </ThemeLocalization>
                     </ThemeColorPresets>
-                  </NotistackProvider>
-                </ThemeProvider>
-              </SettingsProvider>
-            </CollapseDrawerProvider>
-          </LocalizationProvider>
-        </AuthProvider>
-      </ReduxProvider>
+                  </ThemeProvider>
+                </SettingsProvider>
+              </CollapseDrawerProvider>
+            </LocalizationProvider>
+          </AuthProvider>
+        </ReduxProvider>
+      </NotistackProvider>
     </>
   );
 }
