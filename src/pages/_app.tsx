@@ -37,7 +37,7 @@ import { CollapseDrawerProvider } from "@root/contexts/CollapseDrawerContext";
 import { SettingsProvider } from "@root/contexts/SettingsContext";
 
 // components
-import NotistackProvider from "@root/components/NotistackProvider";
+// import NotistackProvider from "@root/components/NotistackProvider";
 import ThemeColorPresets from "@root/components/ThemeColorPresets";
 import ThemeLocalization from "@root/components/ThemeLocalization";
 import RtlLayout from "@root/components/RtlLayout";
@@ -55,7 +55,7 @@ function MyApp(props: any) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <NotistackProvider>
+      {/* <NotistackProvider> */}
         <ReduxProvider store={store}>
           <AuthProvider>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -76,7 +76,7 @@ function MyApp(props: any) {
             </LocalizationProvider>
           </AuthProvider>
         </ReduxProvider>
-      </NotistackProvider>
+      {/* </NotistackProvider> */}
     </>
   );
 }
