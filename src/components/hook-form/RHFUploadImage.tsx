@@ -67,7 +67,7 @@ export default function RHFUploadImage(props: any) {
           }}
         >
           {result ? (
-            <img
+            <Image
               ref={imageRef}
               src={
                 result ||
