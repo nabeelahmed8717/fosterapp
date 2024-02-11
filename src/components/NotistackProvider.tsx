@@ -71,47 +71,7 @@ export default function NotistackProvider({
     <>
       <SnackbarStyles />
 
-      <SnackbarProvider
-        ref={notistackRef}
-        dense
-        maxSnack={5}
-        preventDuplicate
-        autoHideDuration={3000}
-        variant="success" // Set default variant
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        iconVariant={{
-          info: (
-            <SnackbarIcon
-              icon={<InfoIcon htmlColor={iconColor} />}
-              color="info"
-            />
-          ),
-          success: (
-            <SnackbarIcon
-              icon={<CheckCircleIcon htmlColor={iconColor} />}
-              color="success"
-            />
-          ),
-          warning: (
-            <SnackbarIcon
-              icon={<ReportProblemIcon htmlColor={iconColor} />}
-              color="warning"
-            />
-          ),
-          error: (
-            <SnackbarIcon
-              icon={<ErrorIcon htmlColor={iconColor} />}
-              color="error"
-            />
-          ),
-        }}
-        // With close as default
-        action={(key: any) => (
-          <IconButton size="small" onClick={onClose(key)} sx={{ p: 0.5 }}>
-            <CloseIcon htmlColor={iconColor} />
-          </IconButton>
-        )}
-      >
+      <SnackbarProvider>
         {children}
       </SnackbarProvider>
     </>
@@ -120,23 +80,3 @@ export default function NotistackProvider({
 
 // ----------------------------------------------------------------------
 
-function SnackbarIcon({ icon, color }: any) {
-  return (
-    <Box
-      component="span"
-      sx={{
-        mr: 1.5,
-        width: 40,
-        height: 40,
-        display: "flex",
-        borderRadius: 1.5,
-        alignItems: "center",
-        justifyContent: "center",
-        color: `${color}.main`,
-        bgcolor: (theme: any) => alpha(theme.palette[color].main, 0.16),
-      }}
-    >
-      {icon}
-    </Box>
-  );
-}
